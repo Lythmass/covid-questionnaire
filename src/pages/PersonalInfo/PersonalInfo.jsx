@@ -1,5 +1,5 @@
-import InputText from '../../components/Inputs/InputText';
-import Layout from '../../components/Layout/Layout';
+import InputText from '@/components/Inputs/InputText';
+import Layout from '@/components/Layout/Layout';
 import InputEmail from './components/InputEmail';
 
 const PersonalInfo = () => {
