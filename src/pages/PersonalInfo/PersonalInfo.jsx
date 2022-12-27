@@ -1,5 +1,4 @@
-import InputText from '@/components/Inputs/InputText';
-import Layout from '@/components/Layout/Layout';
+import { InputText, Layout } from '@/components';
 import { FormProvider, useForm, useWatch } from 'react-hook-form';
 import { useState, useEffect } from 'react';
 

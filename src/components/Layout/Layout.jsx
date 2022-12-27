@@ -1,5 +1,4 @@
-import LayoutBody from './LayoutBody';
-import LayoutHeader from './LayoutHeader';
+import { LayoutBody, LayoutHeader } from '@/components';
 
 const Layout = (props) => {
   return (
