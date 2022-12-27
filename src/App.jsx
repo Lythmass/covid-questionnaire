@@ -1,5 +1,6 @@
 import StartingPage from './pages/StartingPage/StartingPage';
 import PersonalInfo from './pages/PersonalInfo/PersonalInfo';
+import CovidState from './pages/CovidState/CovidState';
 import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={<StartingPage />} />
       <Route path='/personal-info' element={<PersonalInfo />} />
+      <Route path='/covid-state' element={<CovidState />} />
     </Routes>
   );
 };

@@ -2,7 +2,7 @@ const LayoutHeader = () => {
   return (
     <div className='flex justify-between w-full items-center'>
       <img className='w-36' src='src/assets/images/logo-text.png' alt='logo' />
-      <h1 className='font-bold text-[2.5rem]'>1/4</h1>
+      <h1 className='font-bold text-[2.5rem] font-anonymousPro'>1/4</h1>
     </div>
   );
 };
