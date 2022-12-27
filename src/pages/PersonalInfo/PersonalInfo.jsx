@@ -38,7 +38,13 @@ const PersonalInfo = () => {
   }, [firstName, lastName, mail, firstNameError, lastNameError, mailError]);
 
   return (
-    <Layout canProceed={canProceed}>
+    <Layout
+      nextPage='covid-state'
+      prevPage=''
+      image='scan2'
+      page='1'
+      canProceed={canProceed}
+    >
       <FormProvider {...methods}>
         <form className='flex flex-col gap-12'>
           <InputText
