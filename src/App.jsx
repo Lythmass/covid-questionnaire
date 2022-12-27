@@ -1,5 +1,4 @@
-import StartingPage from './pages/StartingPage/StartingPage';
-import PersonalInfo from './pages/PersonalInfo/PersonalInfo';
+import { StartingPage, PersonalInfo, CovidState } from '@/pages';
 import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -7,6 +6,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={<StartingPage />} />
       <Route path='/personal-info' element={<PersonalInfo />} />
+      <Route path='/covid-state' element={<CovidState />} />
     </Routes>
   );
 };
