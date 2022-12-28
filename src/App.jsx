@@ -1,4 +1,10 @@
-import { StartingPage, PersonalInfo, CovidState, Vaccinated } from '@/pages';
+import {
+  StartingPage,
+  PersonalInfo,
+  CovidState,
+  Vaccinated,
+  CovidPolicy,
+} from '@/pages';
 import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -8,6 +14,7 @@ const App = () => {
       <Route path='/personal-info' element={<PersonalInfo />} />
       <Route path='/covid-state' element={<CovidState />} />
       <Route path='/vaccinated' element={<Vaccinated />} />
+      <Route path='/covid-policy' element={<CovidPolicy />} />
     </Routes>
   );
 };
