@@ -1,11 +1,7 @@
-import { useState } from 'react';
+import { useDate } from '@/hooks';
 
 const Date = (props) => {
-  const [isDate, setIsDate] = useState(props.type);
-
-  const focusHandler = () => {
-    setIsDate('date');
-  };
+  const [isDate, focusHandler] = useDate(props.type);
 
   return (
     <>

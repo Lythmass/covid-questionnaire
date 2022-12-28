@@ -1,15 +1,11 @@
 import { InputText } from '@/components';
-import { useForm, FormProvider, useWatch } from 'react-hook-form';
+import { useForm, FormProvider } from 'react-hook-form';
 import { useEffect } from 'react';
+import { useError } from '@/hooks';
 
 const ShowOnSecondNo = (props) => {
   const methods = useForm({ mode: 'all' });
-
-  const watchDate = useWatch({
-    name: 'date',
-    control: methods.control,
-  });
-  const dateError = methods.formState.errors['date']?.message;
+  const [watchDate, dateError] = useError('date', methods);
 
   useEffect(() => {
     if (watchDate !== undefined && dateError === undefined) {

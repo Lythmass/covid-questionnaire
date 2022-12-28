@@ -1,25 +1,20 @@
 import { InputText } from '@/components';
-import { useForm, FormProvider, useWatch } from 'react-hook-form';
+import { useForm, FormProvider } from 'react-hook-form';
 import { useEffect } from 'react';
+import { useError } from '@/hooks';
 
 const ShowOnSecondYes = (props) => {
   const methods = useForm({ mode: 'all' });
 
-  const watchTestDay = useWatch({
-    name: 'testDay',
-    control: methods.control,
-  });
-  const watchTestAntibodies = useWatch({
-    name: 'testAntibodies',
-    control: methods.control,
-  });
-  const testDayError = methods.formState.errors['testDay']?.message;
-  const testAntibodiesError =
-    methods.formState.errors['testAntibodies']?.message;
+  const [watchTestNum, testNumError] = useError('testNum', methods);
+  const [watchTestAntibodies, testAntibodiesError] = useError(
+    'testAntibodies',
+    methods
+  );
 
   useEffect(() => {
-    if (watchTestDay !== undefined || watchTestAntibodies !== undefined) {
-      if (testDayError === undefined && testAntibodiesError === undefined) {
+    if (watchTestNum !== undefined || watchTestAntibodies !== undefined) {
+      if (testNumError === undefined && testAntibodiesError === undefined) {
         props.setCanProceed(true);
       } else {
         props.setCanProceed(false);
@@ -27,9 +22,9 @@ const ShowOnSecondYes = (props) => {
     }
   }, [
     props,
-    watchTestDay,
+    watchTestNum,
     watchTestAntibodies,
-    testDayError,
+    testNumError,
     testAntibodiesError,
   ]);
 
@@ -37,7 +32,7 @@ const ShowOnSecondYes = (props) => {
     <FormProvider {...methods}>
       <form>
         <InputText
-          name='testDay'
+          name='testNum'
           type='num'
           displayName='თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა'
           placeholder='რიცხვი'

@@ -1,30 +1,16 @@
 import { RadioBlock, InputRadio, Layout } from '@/components';
 import { ShowOnYes, ShowOnSecondYes, ShowOnSecondNo } from '@/pages';
-import { useState } from 'react';
+import { useCheck } from '@/hooks';
 
 const CovidState = () => {
-  const [checked, setChecked] = useState('');
-  const [secondBlockChecked, setSecondBlockChecked] = useState('');
-  const [canProceed, setCanProceed] = useState(false);
-
-  const checkHandler = (text) => {
-    if (text !== 'yes-1') {
-      setChecked(text);
-      setCanProceed(true);
-      setSecondBlockChecked('');
-    } else {
-      setCanProceed(false);
-      setChecked(text);
-    }
-  };
-  const secondBlockCheckHandler = (text) => {
-    if (text === 'yes-2') {
-      setCanProceed(true);
-    } else {
-      setCanProceed(false);
-    }
-    setSecondBlockChecked(text);
-  };
+  const [
+    checked,
+    secondBlockChecked,
+    canProceed,
+    setCanProceed,
+    checkHandler,
+    secondBlockCheckHandler,
+  ] = useCheck('yes-1');
 
   return (
     <Layout
