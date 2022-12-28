@@ -1,7 +1,19 @@
 import { useFormContext } from 'react-hook-form';
+import { Mail, Text, Num, Date } from '@/components';
 
 const InputText = (props) => {
   const methods = useFormContext({ mode: 'all' });
+
+  const validateNumber = {
+    pattern: {
+      value: /^\d+$/,
+      message: 'გთხოვთ მიუთითოთ რიცხვი',
+    },
+  };
+
+  const validateDate = {
+    required: 'გთხოვთ აირჩიოთ თარიღი',
+  };
 
   const validateEmail = {
     required: 'გთხოვთ შეავსეთ ველი',
@@ -41,38 +53,48 @@ const InputText = (props) => {
 
   return (
     <div className='flex flex-col gap-3'>
-      <label className='font-bold text-[1.375rem]' htmlFor={props.name}>
+      <label className='font-bold text-[1.375rem] w-3/4' htmlFor={props.name}>
         {props.displayName}
       </label>
       {props.type === 'mail' && (
-        <>
-          <input
-            {...methods.register(props.name, validateEmail)}
-            name={props.name}
-            type={props.type}
-            id={props.name}
-            placeholder={props.placeholder}
-            className='w-[31.25rem] h-[3.125rem] px-5 border-[0.8px] border-neutral-800 placeholder-neutral-800 bg-gray-200'
-          />
-          <p className='text-orange-600'>
-            {methods.formState.errors[props.name]?.message}
-          </p>
-        </>
+        <Mail
+          name={props.name}
+          type={props.type}
+          id={props.name}
+          placeholder={props.placeholder}
+          methods={methods}
+          validateEmail={validateEmail}
+        />
       )}
       {props.type === 'text' && (
-        <>
-          <input
-            {...methods.register(props.name, validateText)}
-            name={props.name}
-            type={props.type}
-            id={props.name}
-            placeholder={props.placeholder}
-            className='w-[31.25rem] h-[3.125rem] px-5 border-[0.8px] border-neutral-800 placeholder-neutral-800 bg-gray-200'
-          />
-          <p className='text-orange-600'>
-            {methods.formState.errors[props.name]?.message}
-          </p>
-        </>
+        <Text
+          name={props.name}
+          type={props.type}
+          id={props.name}
+          placeholder={props.placeholder}
+          methods={methods}
+          validateText={validateText}
+        />
+      )}
+      {props.type === 'num' && (
+        <Num
+          name={props.name}
+          type={props.type}
+          id={props.name}
+          placeholder={props.placeholder}
+          methods={methods}
+          validateNumber={validateNumber}
+        />
+      )}
+      {props.type === 'temporary-text' && (
+        <Date
+          name={props.name}
+          type={props.type}
+          id={props.name}
+          placeholder={props.placeholder}
+          methods={methods}
+          validateDate={validateDate}
+        />
       )}
     </div>
   );
