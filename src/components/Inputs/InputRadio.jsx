@@ -1,14 +1,19 @@
 const InputRadio = (props) => {
+  const checkHandler = (event) => {
+    props.checkHandler(event.target.value);
+  };
   return (
     <div className='flex items-center gap-4'>
       <input
+        onChange={checkHandler}
         type='radio'
-        id={props.labelText}
+        id={props.value}
+        value={props.value}
         name={props.name}
         className='hidden peer'
       />
       <label
-        htmlFor={props.labelText}
+        htmlFor={props.value}
         className='text-xl flex gap-4 items-center peer-checked:[&>div>div]:inline-block'
       >
         <div className='w-6 h-6 rounded-[50%] border border-black relative group-hover:bg-red'>

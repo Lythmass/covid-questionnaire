@@ -1,3 +1,9 @@
-export { default as StartingPage } from './StartingPage/StartingPage';
-export { default as PersonalInfo } from './PersonalInfo/PersonalInfo';
-export { default as CovidState } from './CovidState/CovidState';
+export { StartingPage } from './StartingPage';
+export { PersonalInfo } from './PersonalInfo';
+export { Vaccinated } from './Vaccinated';
+export {
+  CovidState,
+  ShowOnYes,
+  ShowOnSecondYes,
+  ShowOnSecondNo,
+} from './CovidState';
