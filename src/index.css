@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'bpg_arial_2009';
-  src: url('src/assets/fonts/bpg_arial_2009.ttf');
+  src: url('/assets/fonts/bpg_arial_2009.ttf');
 }
 
 @layer utilities {

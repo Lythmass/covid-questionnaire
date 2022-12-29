@@ -7,7 +7,7 @@ const LayoutBody = (props) => {
         <div>{props.children}</div>
         <img
           className='max-h-[39rem]'
-          src={`src/assets/images/${props.image}.png`}
+          src={`/assets/images/${props.image}.png`}
           alt='covid'
         />
       </div>
@@ -16,7 +16,7 @@ const LayoutBody = (props) => {
           <button type='submit'>
             <Link to={`/${props.prevPage}`}>
               <img
-                src='src/assets/images/next.png'
+                src='/assets/images/next.png'
                 className='w-4 rotate-180'
                 alt='next'
               />
@@ -26,18 +26,14 @@ const LayoutBody = (props) => {
         {props.canProceed && props.image !== 'bike2' && (
           <button type='submit'>
             <Link to={`/${props.nextPage}`}>
-              <img
-                src='src/assets/images/next.png'
-                className='w-4'
-                alt='next'
-              />
+              <img src='/assets/images/next.png' className='w-4' alt='next' />
             </Link>
           </button>
         )}
         {!props.canProceed && props.image !== 'bike2' && (
           <button type='submit' disabled>
             <img
-              src='src/assets/images/next-blocked.png'
+              src='/assets/images/next-blocked.png'
               className='w-4'
               alt='next'
             />
