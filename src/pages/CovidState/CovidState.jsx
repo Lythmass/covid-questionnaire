@@ -10,7 +10,7 @@ const CovidState = () => {
     setCanProceed,
     checkHandler,
     secondBlockCheckHandler,
-  ] = useCheck('yes-1');
+  ] = useCheck('yes-1', 'yes-2');
 
   return (
     <Layout
