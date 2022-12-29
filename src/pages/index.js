@@ -12,4 +12,4 @@ export {
   ShowOnSecondYes,
   ShowOnSecondNo,
 } from './CovidState';
-export { CovidPolicy } from './CovidPolicy';
+export { CovidPolicy, Button, TextArea } from './CovidPolicy';
