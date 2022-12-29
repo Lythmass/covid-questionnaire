@@ -23,7 +23,7 @@ const LayoutBody = (props) => {
             </Link>
           </button>
         )}
-        {props.canProceed && (
+        {props.canProceed && props.image !== 'bike2' && (
           <button type='submit'>
             <Link to={`/${props.nextPage}`}>
               <img
@@ -34,7 +34,7 @@ const LayoutBody = (props) => {
             </Link>
           </button>
         )}
-        {!props.canProceed && (
+        {!props.canProceed && props.image !== 'bike2' && (
           <button type='submit' disabled>
             <img
               src='src/assets/images/next-blocked.png'
