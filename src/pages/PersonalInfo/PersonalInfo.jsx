@@ -1,9 +1,11 @@
 import { InputText, Layout } from '@/components';
 import { FormProvider, useForm, useWatch } from 'react-hook-form';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { SendDataContext } from '@/state';
 
 const PersonalInfo = () => {
   const [canProceed, setCanProceed] = useState(false);
+  const data = useContext(SendDataContext);
   const methods = useForm({ mode: 'all' });
 
   const firstName = useWatch({
@@ -36,7 +38,14 @@ const PersonalInfo = () => {
       }
     }
   }, [firstName, lastName, mail, firstNameError, lastNameError, mailError]);
-
+  const handleSubmit = () => {
+    data.data_handler({
+      ...data.data,
+      first_name: firstName,
+      last_name: lastName,
+      email: mail,
+    });
+  };
   return (
     <Layout
       nextPage='covid-state'
@@ -44,6 +53,7 @@ const PersonalInfo = () => {
       image='scan2'
       page='1'
       canProceed={canProceed}
+      handleSubmit={handleSubmit}
     >
       <FormProvider {...methods}>
         <form className='flex flex-col gap-12'>

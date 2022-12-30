@@ -13,3 +13,4 @@ export {
   ShowOnSecondNo,
 } from './CovidState';
 export { CovidPolicy, Button, TextArea } from './CovidPolicy';
+export { ThankYou } from './ThankYou';

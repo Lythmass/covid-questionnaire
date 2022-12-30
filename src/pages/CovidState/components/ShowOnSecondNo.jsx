@@ -15,6 +15,10 @@ const ShowOnSecondNo = (props) => {
     }
   }, [props, watchDate, dateError]);
 
+  useEffect(() => {
+    localStorage.setItem('covid_sickness_date', watchDate);
+  }, [watchDate]);
+
   return (
     <FormProvider {...methods}>
       <form>

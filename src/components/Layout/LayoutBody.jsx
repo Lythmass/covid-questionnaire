@@ -24,7 +24,7 @@ const LayoutBody = (props) => {
           </button>
         )}
         {props.canProceed && props.image !== 'bike2' && (
-          <button type='submit'>
+          <button type='submit' onClick={props.handleSubmit}>
             <Link to={`/${props.nextPage}`}>
               <img src='/assets/images/next.png' className='w-4' alt='next' />
             </Link>

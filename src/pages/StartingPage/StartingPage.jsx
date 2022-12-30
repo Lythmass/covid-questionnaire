@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const StartingPage = () => {
+  localStorage.clear();
   return (
     <section className='bg-gray-200 w-100 h-screen flex flex-col justify-center items-center gap-24'>
       <img className='w-24' src='/assets/images/logo.png' alt='logo' />
