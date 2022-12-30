@@ -11,6 +11,7 @@ const Layout = (props) => {
           prevPage={props.prevPage}
           image={props.image}
           canProceed={props.canProceed}
+          handleSubmit={props.handleSubmit}
         >
           {props.children}
         </LayoutBody>

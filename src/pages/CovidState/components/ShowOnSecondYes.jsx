@@ -28,6 +28,11 @@ const ShowOnSecondYes = (props) => {
     testAntibodiesError,
   ]);
 
+  useEffect(() => {
+    localStorage.setItem('test_date', watchTestNum);
+    localStorage.setItem('number', watchTestAntibodies);
+  }, [watchTestNum, watchTestAntibodies]);
+
   return (
     <FormProvider {...methods}>
       <form>

@@ -7,19 +7,19 @@ const ShowOnYesVaccinated = (props) => {
         checkHandler={props.checkHandler}
         labelText='პირველი დოზა და დარეგისტრირებული მეორეზე'
         name='step'
-        value='first-dose'
+        value='first_dosage_and_registered_on_the_second'
       />
       <InputRadio
         checkHandler={props.checkHandler}
         labelText='სრულად აცრილი ვარ'
         name='step'
-        value='full-dose'
+        value='fully_vaccinated'
       />
       <InputRadio
         checkHandler={props.checkHandler}
         labelText='პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე'
         name='step'
-        value='first-dose-only'
+        value='first_dosage_and_not_registered_yet'
       />
     </RadioBlock>
   );
