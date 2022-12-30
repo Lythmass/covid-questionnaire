@@ -16,7 +16,7 @@ const ThankYou = () => {
   }, [data]);
 
   return (
-    <section className='bg-neutral-800 w-full h-screen flex justify-center items-center'>
+    <section className='font-bpg bg-neutral-800 w-full h-screen flex justify-center items-center'>
       <img
         className='w-14 absolute translate-y-[-5rem] translate-x-[-6.5rem]'
         src='/assets/images/star.png'
