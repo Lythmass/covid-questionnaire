@@ -81,6 +81,13 @@ const PersonalInfo = () => {
           <p className='w-[60%]'>*-ით მონიშნული ველების შევსება სავალდებულოა</p>
         </div>
       </FormProvider>
+      <div className='absolute right-[16rem] top-[19.5rem]'>
+        <img
+          className='opacity-90 z-10 animate-personal-info-square'
+          src='/assets/images/anim1.png'
+          alt='anim1'
+        />
+      </div>
     </Layout>
   );
 };

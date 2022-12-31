@@ -18,6 +18,8 @@ module.exports = {
       animation: {
         'big-to-small': 'big-to-small 0.5s linear',
         'up-to-bottom': 'up-to-bottom 1s linear',
+        'personal-info-square': 'personal-info-square 0.35s linear',
+        'page-fade': 'page-fade 0.35s linear',
       },
       keyframes: {
         'big-to-small': {
@@ -27,6 +29,16 @@ module.exports = {
         'up-to-bottom': {
           '0%': { color: 'rgba(0,0,0,0)', transform: 'translateY(-10rem)' },
           '60%': { color: 'rgba(0,0,0,0)' },
+        },
+        'personal-info-square': {
+          '0%': {
+            transform: 'translateX(-20rem) translateY(4rem) scaleX(0.25)',
+          },
+          '100%': { transform: 'scaleX(1)' },
+        },
+        'page-fade': {
+          '0%': { opacity: '0.1' },
+          '100%': { opacity: '1' },
         },
       },
     },

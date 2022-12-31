@@ -6,7 +6,7 @@ const LayoutBody = (props) => {
       <div className='flex items-start justify-between mt-5'>
         <div>{props.children}</div>
         <img
-          className='max-h-[39rem]'
+          className='max-h-[39rem] z-20'
           src={`/assets/images/${props.image}.png`}
           alt='covid'
         />
