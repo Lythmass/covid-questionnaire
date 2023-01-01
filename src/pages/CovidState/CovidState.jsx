@@ -1,6 +1,6 @@
 import { RadioBlock, InputRadio, Layout } from '@/components';
 import { ShowOnYes, ShowOnSecondYes, ShowOnSecondNo } from '@/pages';
-import { useCheck } from '@/hooks';
+import { useCheck, useTitle } from '@/hooks';
 import { useContext } from 'react';
 import { SendDataContext } from '@/state';
 
@@ -14,6 +14,8 @@ const CovidState = () => {
     checkHandler,
     secondBlockCheckHandler,
   ] = useCheck('yes-1', 'yes-2');
+
+  useTitle('Covid State');
 
   const handleSubmit = () => {
     if (checked === 'yes-1' && secondBlockChecked === 'yes-2') {
@@ -81,6 +83,13 @@ const CovidState = () => {
         {secondBlockChecked === 'no-2' && (
           <ShowOnSecondNo setCanProceed={setCanProceed} />
         )}
+      </div>
+      <div className='absolute right-[40rem] top-[24rem]'>
+        <img
+          className='animate-covid-state-circle'
+          src='/assets/images/anim2.png'
+          alt='anim2'
+        />
       </div>
     </Layout>
   );

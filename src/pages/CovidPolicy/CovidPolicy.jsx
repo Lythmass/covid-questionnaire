@@ -2,8 +2,9 @@ import { Layout, RadioBlock, InputRadioValidation } from '@/components';
 import { Button, TextArea } from '@/pages';
 import { useForm, FormProvider, useWatch } from 'react-hook-form';
 import { SendDataContext } from '@/state';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTitle } from '@/hooks';
 
 const CovidPolicy = () => {
   const methods = useForm();
@@ -26,6 +27,8 @@ const CovidPolicy = () => {
     name: 'area-2',
     control: methods.control,
   });
+
+  useTitle('Covid Policy');
 
   const submitHandler = () => {
     data.data_handler({
@@ -97,6 +100,13 @@ const CovidPolicy = () => {
             <Button />
           </form>
         </FormProvider>
+      </div>
+      <div className='absolute right-[35rem] top-[15.5rem]'>
+        <img
+          className='animate-covid-policy-heart'
+          src='/assets/images/anim4.png'
+          alt='anim2'
+        />
       </div>
     </Layout>
   );

@@ -2,6 +2,7 @@ import { InputText, Layout } from '@/components';
 import { FormProvider, useForm, useWatch } from 'react-hook-form';
 import { useState, useEffect, useContext } from 'react';
 import { SendDataContext } from '@/state';
+import { useTitle } from '@/hooks';
 
 const PersonalInfo = () => {
   const [canProceed, setCanProceed] = useState(false);
@@ -20,6 +21,8 @@ const PersonalInfo = () => {
   const firstNameError = methods.formState.errors['firstName']?.message;
   const lastNameError = methods.formState.errors['lastName']?.message;
   const mailError = methods.formState.errors['mail']?.message;
+
+  useTitle('Personal Info');
 
   useEffect(() => {
     if (

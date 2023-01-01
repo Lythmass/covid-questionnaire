@@ -5,7 +5,7 @@ const Layout = (props) => {
     <section className='bg-gray-200 animate-page-fade w-100 min-h-screen relative flex justify-center items-center '>
       <div className='flex flex-col items-center min-h-screen justify-start w-[95rem] gap-6 py-20'>
         <LayoutHeader page={props.page} />
-        <hr className='w-full border-black border-y-[1.8px]' />
+        <hr className='w-full bg-black h-[2.8px]' />
         <LayoutBody
           nextPage={props.nextPage}
           prevPage={props.prevPage}

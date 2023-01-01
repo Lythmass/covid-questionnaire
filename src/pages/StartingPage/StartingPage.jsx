@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useTitle } from '@/hooks';
 
 const StartingPage = () => {
   localStorage.clear();
+
+  useTitle('Home');
+
   return (
     <section className='bg-gray-200 w-100 h-screen flex flex-col justify-center items-center gap-24'>
       <img
