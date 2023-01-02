@@ -10,7 +10,7 @@ once the user submits the data, it gets sent to the server.
 * [Tech Stack](#tech-stack)
 * [Installation](#getting-started)
 * [Resources](#resources)
-* [Commit Rules](#commit-rules)
+
 ## Features
 
 - Validation in Front-end
@@ -47,7 +47,6 @@ Host on local server
  - [BPG Font](https://fonts.ge/ka/font/13/BPG-Arial)
  - [Anonymous Pro Font](https://fonts.google.com/specimen/Anonymous+Pro)
  - [API Reference](https://covid19.devtest.ge/api-specs)
+ - [Commit Rules](https://redberry.gitbook.io/resources/other/git-is-semantikuri-komitebi)
+ - [Folder Structure](https://redberry.gitbook.io/resources/kodisa-da-proektis-shepasebis-kriteriumebi/reaktis-kodis-khariskhis-kriteriumebi)
 
-
-## Commit Rules
-Link: https://redberry.gitbook.io/resources/other/git-is-semantikuri-komitebi
