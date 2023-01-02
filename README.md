@@ -10,6 +10,7 @@ once the user submits the data, it gets sent to the server.
 * [Tech Stack](#tech-stack)
 * [Installation](#getting-started)
 * [Resources](#resources)
+* [Folder Structure](#folder-structure)
 
 ## Features
 
@@ -48,5 +49,43 @@ Host on local server
  - [Anonymous Pro Font](https://fonts.google.com/specimen/Anonymous+Pro)
  - [API Reference](https://covid19.devtest.ge/api-specs)
  - [Commit Rules](https://redberry.gitbook.io/resources/other/git-is-semantikuri-komitebi)
- - [Folder Structure](https://redberry.gitbook.io/resources/kodisa-da-proektis-shepasebis-kriteriumebi/reaktis-kodis-khariskhis-kriteriumebi)
+
+
+## Folder Structure
+```bash
+├── public
+│   └── assets
+│       ├── fonts
+│       └── images
+└── src
+    ├── components
+    │   ├── Inputs
+    │   │   └── InputTextComponents
+    │   └── Layout
+    ├── hooks
+    ├── pages
+    │   ├── CovidPolicy
+    │   │   └── components
+    │   ├── CovidState
+    │   │   └── components
+    │   ├── PersonalInfo
+    │   ├── StartingPage
+    │   ├── ThankYou
+    │   └── Vaccinated
+    │       └── components
+    └── state
+- .eslintrc.json
+- .prettierrc.json
+- index.html
+- jsconfig.json
+- package-lock.json
+- package.json
+- postcss.config.cjs
+- README.md
+- tailwind.config.cjs
+- vite.config.js
+
+```
+
+
 
