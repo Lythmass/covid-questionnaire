@@ -1,5 +1,6 @@
 import { SendDataContext } from '@/state';
 import { useContext, useEffect } from 'react';
+import { useTitle } from '@/hooks';
 
 const ThankYou = () => {
   const data = useContext(SendDataContext);
@@ -15,16 +16,23 @@ const ThankYou = () => {
     });
   }, [data]);
 
+  useTitle('Thank You');
+
   return (
-    <section className='font-bpg bg-neutral-800 w-full h-screen flex justify-center items-center'>
+    <section className='relative overflow-hidden animate-bg-color font-bpg bg-neutral-800 w-full h-screen flex justify-center items-center'>
       <img
-        className='w-14 absolute translate-y-[-5rem] translate-x-[-6.5rem]'
+        className='animate-heart absolute w-full opacity-0'
+        src='/assets/images/heart.png'
+        alt='heart'
+      />
+      <img
+        className='animate-thank-you-star-1 w-14 absolute left-[51rem] top-[23rem]'
         src='/assets/images/star.png'
         alt='star'
       />
       <h1 className='font-bold text-[4rem] text-white'>მადლობა</h1>
       <img
-        className='w-8 absolute translate-y-[5rem] translate-x-[6.5rem]'
+        className='animate-thank-you-star-2 w-8 absolute right-[51.5rem] bottom-[25rem]'
         src='/assets/images/star.png'
         alt='star'
       />

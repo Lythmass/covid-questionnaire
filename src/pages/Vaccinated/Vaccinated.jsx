@@ -1,5 +1,5 @@
 import { Layout, RadioBlock, InputRadio } from '@/components';
-import { useCheck } from '@/hooks';
+import { useCheck, useTitle } from '@/hooks';
 import { ShowOnYesVaccinated, ShowOnNoVaccinated, RegisterLink } from '@/pages';
 import { useContext } from 'react';
 import { SendDataContext } from '@/state';
@@ -20,6 +20,9 @@ const Vaccinated = () => {
     'fully_vaccinated',
     'no-1'
   );
+
+  useTitle('Vaccination');
+
   const handleSubmit = () => {
     if (checked === 'yes-1') {
       data.data_handler({
@@ -84,6 +87,13 @@ const Vaccinated = () => {
             )}
           </>
         )}
+      </div>
+      <div className='absolute right-[35rem] top-[11rem]'>
+        <img
+          className='animate-vaccinated-star'
+          src='/assets/images/anim3.png'
+          alt='anim2'
+        />
       </div>
     </Layout>
   );
