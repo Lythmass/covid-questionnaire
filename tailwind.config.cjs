@@ -80,6 +80,9 @@ module.exports = {
           '0%': { backgroundColor: 'white' },
         },
       },
+      colors: {
+        'white-777': '#EAEAEA',
+      },
     },
   },
   plugins: [],
