@@ -30,8 +30,8 @@ module.exports = {
       },
       keyframes: {
         'big-to-small': {
-          '0%': { width: '100%' },
-          '100%': { width: '6rem' },
+          '0%': { transform: 'scale(45)' },
+          '100%': { transform: 'scale(1)' },
         },
         'up-to-bottom': {
           '0%': { color: 'rgba(0,0,0,0)', transform: 'translateY(-10rem)' },

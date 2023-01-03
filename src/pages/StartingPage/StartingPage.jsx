@@ -7,7 +7,7 @@ const StartingPage = () => {
   useTitle('Home');
 
   return (
-    <section className='bg-white-777 w-100 h-screen flex flex-col justify-center items-center gap-24'>
+    <section className='bg-white-777 w-100 h-screen flex flex-col justify-center items-center gap-24 overflow-hidden'>
       <img
         className='w-24 animate-big-to-small z-20'
         src='/assets/images/logo.png'
