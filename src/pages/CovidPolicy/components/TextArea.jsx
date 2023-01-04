@@ -10,7 +10,7 @@ const TextArea = (props) => {
       <textarea
         {...methods.register(props.id, { required: false })}
         id={props.id}
-        className='w-full h-48 resize-none p-4 text-lg bg-gray-200 border border-black'
+        className='w-full h-48 resize-none p-4 text-lg bg-white-777 border border-black'
       />
     </div>
   );
