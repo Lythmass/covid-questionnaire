@@ -43,7 +43,7 @@ const InputText = (props) => {
     },
 
     pattern: {
-      value: /^[ა-ჰ]+$/,
+      value: /^[A-z-ა-ჰ]+$/,
       message: `${props.displayName.substr(
         0,
         props.displayName.length - 2
