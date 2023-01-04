@@ -3,6 +3,7 @@ const Text = (props) => {
     <>
       <input
         {...props.methods.register(props.name, props.validateText)}
+        defaultValue={props.defaultValue}
         name={props.name}
         type={props.type}
         id={props.name}

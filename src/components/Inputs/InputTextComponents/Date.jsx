@@ -8,6 +8,7 @@ const Date = (props) => {
       <input
         onFocus={focusHandler}
         {...props.methods.register(props.name, props.validateDate)}
+        defaultValue={props.defaultValue}
         name={props.name}
         type={isDate}
         id={props.name}

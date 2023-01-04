@@ -1,19 +1,19 @@
-import { RadioBlock, InputRadio } from '@/components';
+import { RadioBlock, InputRadioValidation } from '@/components';
 
 const ShowOnYes = (props) => {
   return (
     <RadioBlock title='ანტისხეულების ტესტი გაქვს გაკეთებული?*'>
-      <InputRadio
-        checkHandler={props.checkHandler}
+      <InputRadioValidation
         labelText='კი'
         value='yes-2'
         name='done-test'
+        defaultValue={props.defaultValue}
       />
-      <InputRadio
-        checkHandler={props.checkHandler}
+      <InputRadioValidation
         labelText='არა'
         value='no-2'
         name='done-test'
+        defaultValue={props.defaultValue}
       />
     </RadioBlock>
   );

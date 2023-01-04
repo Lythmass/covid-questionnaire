@@ -13,7 +13,7 @@ const LayoutBody = (props) => {
       </div>
       <div className='w-full flex justify-center gap-32'>
         {props.image !== 'scan2' && (
-          <button type='submit'>
+          <button type='submit' onClick={props.handleSubmit}>
             <Link to={`/${props.prevPage}`}>
               <img
                 src='/assets/images/next.png'

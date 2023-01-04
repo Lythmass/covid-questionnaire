@@ -12,12 +12,18 @@ const PersonalInfo = () => {
   const firstName = useWatch({
     name: 'firstName',
     control: methods.control,
+    defaultValue: data.data.first_name,
   });
   const lastName = useWatch({
     name: 'lastName',
     control: methods.control,
+    defaultValue: data.data.last_name,
   });
-  const mail = useWatch({ name: 'mail', control: methods.control });
+  const mail = useWatch({
+    name: 'mail',
+    control: methods.control,
+    defaultValue: data.data.email,
+  });
   const firstNameError = methods.formState.errors['firstName']?.message;
   const lastNameError = methods.formState.errors['lastName']?.message;
   const mailError = methods.formState.errors['mail']?.message;
@@ -65,18 +71,21 @@ const PersonalInfo = () => {
             type='text'
             displayName='სახელი*'
             placeholder='იოსებ'
+            defaultValue={data.data.first_name}
           />
           <InputText
             name='lastName'
             type='text'
             displayName='გვარი*'
             placeholder='ჯუღაშვილი'
+            defaultValue={data.data.last_name}
           />
           <InputText
             name='mail'
             type='mail'
             displayName='მეილი*'
             placeholder='fbi@redberry.ge'
+            defaultValue={data.data.email}
           />
         </form>
         <div className='flex flex-col gap-5 w-full'>
