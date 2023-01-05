@@ -58,33 +58,13 @@ Host on local server
 │       ├── fonts
 │       └── images
 └── src
-    ├── components
-    │   ├── Inputs
-    │   │   └── InputTextComponents
-    │   └── Layout
-    ├── hooks
-    ├── pages
-    │   ├── CovidPolicy
-    │   │   └── components
-    │   ├── CovidState
-    │   │   └── components
-    │   ├── PersonalInfo
-    │   ├── StartingPage
-    │   ├── ThankYou
-    │   └── Vaccinated
-    │       └── components
-    └── state
-- .eslintrc.json
-- .prettierrc.json
-- index.html
-- jsconfig.json
-- package-lock.json
-- package.json
-- postcss.config.cjs
-- README.md
-- tailwind.config.cjs
-- vite.config.js
-
+    └── pages
+        ├── PageExample
+        │   ├── components
+        │   │   └── index.js
+        │   ├── PageExample.jsx
+        │   └── index.js
+        └── index.js
 ```
 
 
