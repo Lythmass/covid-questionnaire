@@ -53,38 +53,28 @@ Host on local server
 
 ## Folder Structure
 ```bash
-├── public
-│   └── assets
-│       ├── fonts
-│       └── images
-└── src
+pages
+├── CovidPolicy
+│   ├── components
+│   ├── CovidPolicy.jsx
+│   └── index.js
+├── CovidState
+│   ├── components
+│   ├── CovidState.jsx
+│   └── index.js
+├── PersonalInfo
+│   ├── PersonalInfo.jsx
+│   └── index.js
+├── StartingPage
+│   ├── StartingPage.jsx
+│   └── index.js
+├── ThankYou
+│   ├── ThankYou.jsx
+│   └── index.js
+└── Vaccinated
     ├── components
-    │   ├── Inputs
-    │   │   └── InputTextComponents
-    │   └── Layout
-    ├── hooks
-    ├── pages
-    │   ├── CovidPolicy
-    │   │   └── components
-    │   ├── CovidState
-    │   │   └── components
-    │   ├── PersonalInfo
-    │   ├── StartingPage
-    │   ├── ThankYou
-    │   └── Vaccinated
-    │       └── components
-    └── state
-- .eslintrc.json
-- .prettierrc.json
-- index.html
-- jsconfig.json
-- package-lock.json
-- package.json
-- postcss.config.cjs
-- README.md
-- tailwind.config.cjs
-- vite.config.js
-
+    ├── Vaccinated.jsx
+    └── index.js
 ```
 
 
