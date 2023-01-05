@@ -1,5 +1,11 @@
 import { RadioBlock, InputRadioValidation, Layout } from '@/components';
-import { ShowOnYes, ShowOnSecondYes, ShowOnSecondNo } from '@/pages';
+import {
+  ShowOnYes,
+  ShowOnSecondYes,
+  ShowOnSecondNo,
+  useCovidStateSubmitHandler,
+  useCovidStateWatch,
+} from '@/pages';
 import { useTitle } from '@/hooks';
 import { useContext, useEffect, useState } from 'react';
 import { SendDataContext } from '@/state';
@@ -7,6 +13,8 @@ import { useForm, useWatch, FormProvider } from 'react-hook-form';
 
 const CovidState = () => {
   const [canProceed, setCanProceed] = useState(false);
+  const submit = useCovidStateSubmitHandler();
+  const watch = useCovidStateWatch();
   useTitle('Covid State');
 
   const data = useContext(SendDataContext);
@@ -33,59 +41,14 @@ const CovidState = () => {
   });
 
   useEffect(() => {
-    if (watchHadCovid !== 'yes-1' && watchHadCovid !== undefined) {
-      setCanProceed(true);
-      methods.setValue('done-test', '');
-      const { had_covid, covid_sickness_date, antibodies, ...excludedData } =
-        data.data;
-      data.data_handler({
-        ...excludedData,
-      });
-    } else {
-      if (watchDoneTest === 'yes-2') {
-        const { covid_sickness_date, ...excludedData } = data.data;
-        data.data_handler({
-          ...excludedData,
-        });
-        setCanProceed(true);
-      } else {
-        const { antibodies, ...excludedData } = data.data;
-        data.data_handler({
-          ...excludedData,
-        });
-        setCanProceed(false);
-      }
-    }
+    watch(data, methods, watchHadCovid, watchDoneTest, setCanProceed);
   }, [watchHadCovid, watchDoneTest, methods]);
 
   const proceedHandler = (value) => {
     setCanProceed(value);
   };
-
   const handleSubmit = () => {
-    if (watchHadCovid === 'yes-1' && watchDoneTest === 'yes-2') {
-      data.data_handler({
-        ...data.data,
-        had_covid: 'yes',
-        had_antibody_test: true,
-        antibodies: {
-          test_date: localStorage.getItem('test_date') * 1 || undefined,
-          number: localStorage.getItem('number') * 1 || undefined,
-        },
-      });
-    } else if (watchHadCovid === 'yes-1' && watchDoneTest === 'no-2') {
-      data.data_handler({
-        ...data.data,
-        had_covid: 'yes',
-        had_antibody_test: false,
-        covid_sickness_date: localStorage.getItem('covid_sickness_date'),
-      });
-    } else {
-      data.data_handler({
-        ...data.data,
-        had_covid: watchHadCovid === 'no-1' ? 'no' : watchHadCovid,
-      });
-    }
+    submit(data, watchHadCovid, watchDoneTest);
   };
 
   return (

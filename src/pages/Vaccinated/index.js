@@ -3,4 +3,6 @@ export {
   ShowOnYesVaccinated,
   RegisterLink,
   ShowOnNoVaccinated,
+  useVaccinatedSubmitHandler,
+  useVaccinatedWatch,
 } from './components';

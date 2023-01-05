@@ -1,6 +1,12 @@
 import { Layout, RadioBlock, InputRadioValidation } from '@/components';
 import { useTitle } from '@/hooks';
-import { ShowOnYesVaccinated, ShowOnNoVaccinated, RegisterLink } from '@/pages';
+import {
+  ShowOnYesVaccinated,
+  ShowOnNoVaccinated,
+  RegisterLink,
+  useVaccinatedSubmitHandler,
+  useVaccinatedWatch,
+} from '@/pages';
 import { useContext, useEffect, useState } from 'react';
 import { SendDataContext } from '@/state';
 import { useWatch, useForm, FormProvider } from 'react-hook-form';
@@ -8,6 +14,8 @@ import { useWatch, useForm, FormProvider } from 'react-hook-form';
 const Vaccinated = () => {
   const data = useContext(SendDataContext);
   const [canProceed, setCanProceed] = useState(false);
+  const submit = useVaccinatedSubmitHandler();
+  const watch = useVaccinatedWatch();
 
   const methods = useForm({
     mode: 'all',
@@ -33,38 +41,13 @@ const Vaccinated = () => {
   });
 
   useEffect(() => {
-    if (watchVaccinated === 'yes-1' && watchStep[0] !== 'f') {
-      const { i_am_waiting, ...excludedData } = data.data;
-      data.data_handler({ ...excludedData });
-      setCanProceed(false);
-    } else if (watchVaccinated === 'no-1' && watchStep[0] === 'f') {
-      const { vaccination_stage, ...excludedData } = data.data;
-      data.data_handler({ ...excludedData });
-      setCanProceed(false);
-    } else if (watchStep === false) {
-      setCanProceed(false);
-    } else {
-      setCanProceed(true);
-    }
+    watch(data, watchVaccinated, watchStep, setCanProceed);
   }, [methods, watchStep, watchVaccinated]);
 
   useTitle('Vaccination');
 
   const handleSubmit = () => {
-    if (watchVaccinated === 'yes-1') {
-      data.data_handler({
-        ...data.data,
-        had_vaccine: watchVaccinated === 'yes-1' ? true : false,
-        vaccination_stage: watchStep,
-      });
-    }
-    if (watchVaccinated === 'no-1') {
-      data.data_handler({
-        ...data.data,
-        had_vaccine: watchVaccinated === 'yes-1' ? true : false,
-        i_am_waiting: watchStep,
-      });
-    }
+    submit(data, watchVaccinated, watchStep);
   };
 
   return (

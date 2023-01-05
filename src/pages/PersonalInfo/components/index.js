@@ -1,0 +1,1 @@
+export { usePersonalInfoWatch } from './PersonalInfoWatch';
