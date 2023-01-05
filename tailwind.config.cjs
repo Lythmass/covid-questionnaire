@@ -22,11 +22,11 @@ module.exports = {
         'covid-state-circle': 'covid-state-circle 0.35s linear',
         'vaccinated-star': 'vaccinated-star 0.35s linear',
         'covid-policy-heart': 'covid-policy-heart 0.35s linear',
-        'thank-you-star-1': 'thank-you-star-1 0.25s linear',
-        'thank-you-star-2': 'thank-you-star-2 0.25s linear',
+        'thank-you-star-1': 'thank-you-star-1 0.25s linear 0.6s',
+        'thank-you-star-2': 'thank-you-star-2 0.25s linear 0.6s',
         'page-fade': 'page-fade 0.35s linear',
-        heart: 'heart 0.35s linear',
-        'bg-color': 'bg-color 0.35s linear',
+        heart: 'heart 0.7s linear',
+        'bg-color': 'bg-color 1s linear',
       },
       keyframes: {
         'big-to-small': {
@@ -73,8 +73,8 @@ module.exports = {
           '100%': { opacity: '1' },
         },
         heart: {
-          '0%': { width: '4rem', opacity: '1' },
-          '100%': { width: '100%', opacity: '0' },
+          '0%': { transform: 'scale(0.1)', 'z-index': '10' },
+          '50%': { transform: 'scale(2)', 'z-index': '10' },
         },
         'bg-color': {
           '0%': { backgroundColor: 'white' },
