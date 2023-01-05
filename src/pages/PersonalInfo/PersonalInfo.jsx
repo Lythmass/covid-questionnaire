@@ -3,9 +3,11 @@ import { FormProvider, useForm, useWatch } from 'react-hook-form';
 import { useState, useEffect, useContext } from 'react';
 import { SendDataContext } from '@/state';
 import { useTitle } from '@/hooks';
+import { usePersonalInfoWatch } from '@/pages';
 
 const PersonalInfo = () => {
   const [canProceed, setCanProceed] = useState(false);
+  const watch = usePersonalInfoWatch();
   const data = useContext(SendDataContext);
   const methods = useForm({
     mode: 'all',
@@ -35,22 +37,17 @@ const PersonalInfo = () => {
   useTitle('Personal Info');
 
   useEffect(() => {
-    if (
-      firstName !== undefined &&
-      lastName !== undefined &&
-      mail !== undefined
-    ) {
-      if (
-        firstNameError === undefined &&
-        lastNameError === undefined &&
-        mailError === undefined
-      ) {
-        setCanProceed(true);
-      } else {
-        setCanProceed(false);
-      }
-    }
+    watch(
+      firstName,
+      lastName,
+      mail,
+      firstNameError,
+      lastNameError,
+      mailError,
+      setCanProceed
+    );
   }, [firstName, lastName, mail, firstNameError, lastNameError, mailError]);
+
   const handleSubmit = () => {
     data.data_handler({
       ...data.data,
@@ -59,6 +56,7 @@ const PersonalInfo = () => {
       email: mail,
     });
   };
+
   return (
     <Layout
       nextPage='covid-state'
