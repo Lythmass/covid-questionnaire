@@ -53,28 +53,18 @@ Host on local server
 
 ## Folder Structure
 ```bash
-pages
-├── CovidPolicy
-│   ├── components
-│   ├── CovidPolicy.jsx
-│   └── index.js
-├── CovidState
-│   ├── components
-│   ├── CovidState.jsx
-│   └── index.js
-├── PersonalInfo
-│   ├── PersonalInfo.jsx
-│   └── index.js
-├── StartingPage
-│   ├── StartingPage.jsx
-│   └── index.js
-├── ThankYou
-│   ├── ThankYou.jsx
-│   └── index.js
-└── Vaccinated
-    ├── components
-    ├── Vaccinated.jsx
-    └── index.js
+├── public
+│   └── assets
+│       ├── fonts
+│       └── images
+└── src
+    └── pages
+        ├── PageExample
+        │   ├── components
+        │   │   └── index.js
+        │   ├── PageExample.jsx
+        │   └── index.js
+        └── index.js
 ```
 
 
