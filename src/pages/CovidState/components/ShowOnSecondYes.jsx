@@ -6,10 +6,15 @@ import { useError } from '@/hooks';
 const ShowOnSecondYes = (props) => {
   const methods = useForm({ mode: 'all' });
 
-  const [watchTestNum, testNumError] = useError('testNum', methods);
+  const [watchTestNum, testNumError] = useError(
+    'testNum',
+    methods,
+    props.data?.number
+  );
   const [watchTestAntibodies, testAntibodiesError] = useError(
     'testAntibodies',
-    methods
+    methods,
+    props.data?.test_date
   );
 
   useEffect(() => {
@@ -41,12 +46,14 @@ const ShowOnSecondYes = (props) => {
           type='num'
           displayName='თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა'
           placeholder='რიცხვი'
+          defaultValue={props.data?.test_date}
         />
         <InputText
           name='testAntibodies'
           type='num'
           displayName=''
           placeholder='ანტისხეულების რაოდენობა'
+          defaultValue={props.data?.number}
         />
       </form>
     </FormProvider>

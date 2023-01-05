@@ -1,25 +1,25 @@
-import { RadioBlock, InputRadio } from '@/components';
+import { RadioBlock, InputRadioValidation } from '@/components';
 
 const ShowOnYesVaccinated = (props) => {
   return (
     <RadioBlock title='აირჩიე რა ეტაპზე ხარ*'>
-      <InputRadio
-        checkHandler={props.checkHandler}
+      <InputRadioValidation
         labelText='პირველი დოზა და დარეგისტრირებული მეორეზე'
         name='step'
         value='first_dosage_and_registered_on_the_second'
+        defaultValue={props.defaultValue}
       />
-      <InputRadio
-        checkHandler={props.checkHandler}
+      <InputRadioValidation
         labelText='სრულად აცრილი ვარ'
         name='step'
         value='fully_vaccinated'
+        defaultValue={props.defaultValue}
       />
-      <InputRadio
-        checkHandler={props.checkHandler}
+      <InputRadioValidation
         labelText='პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე'
         name='step'
         value='first_dosage_and_not_registered_yet'
+        defaultValue={props.defaultValue}
       />
     </RadioBlock>
   );

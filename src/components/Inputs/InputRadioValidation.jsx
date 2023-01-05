@@ -13,6 +13,7 @@ const InputRadioValidation = (props) => {
         value={props.value}
         name={props.name}
         className='hidden peer'
+        defaultChecked={props.defaultValue === props.value}
       />
       <label
         htmlFor={props.value}

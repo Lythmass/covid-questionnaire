@@ -1,7 +1,6 @@
 export {
   InputText,
   InputRadioValidation,
-  InputRadio,
   RadioBlock,
   Mail,
   Text,

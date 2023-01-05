@@ -9,7 +9,9 @@ const TextArea = (props) => {
       </label>
       <textarea
         {...methods.register(props.id, { required: false })}
+        defaultValue={props.defaultValue}
         id={props.id}
+        name={props.id}
         className='w-full h-48 resize-none p-4 text-lg bg-white-777 border border-black'
       />
     </div>

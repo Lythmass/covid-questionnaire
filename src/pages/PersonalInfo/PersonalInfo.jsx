@@ -7,7 +7,14 @@ import { useTitle } from '@/hooks';
 const PersonalInfo = () => {
   const [canProceed, setCanProceed] = useState(false);
   const data = useContext(SendDataContext);
-  const methods = useForm({ mode: 'all' });
+  const methods = useForm({
+    mode: 'all',
+    defaultValues: {
+      firstName: data.data.first_name,
+      lastName: data.data.last_name,
+      mail: data.data.email,
+    },
+  });
 
   const firstName = useWatch({
     name: 'firstName',
@@ -17,7 +24,10 @@ const PersonalInfo = () => {
     name: 'lastName',
     control: methods.control,
   });
-  const mail = useWatch({ name: 'mail', control: methods.control });
+  const mail = useWatch({
+    name: 'mail',
+    control: methods.control,
+  });
   const firstNameError = methods.formState.errors['firstName']?.message;
   const lastNameError = methods.formState.errors['lastName']?.message;
   const mailError = methods.formState.errors['mail']?.message;
@@ -65,18 +75,21 @@ const PersonalInfo = () => {
             type='text'
             displayName='სახელი*'
             placeholder='იოსებ'
+            defaultValue={data.data.first_name}
           />
           <InputText
             name='lastName'
             type='text'
             displayName='გვარი*'
             placeholder='ჯუღაშვილი'
+            defaultValue={data.data.last_name}
           />
           <InputText
             name='mail'
             type='mail'
             displayName='მეილი*'
             placeholder='fbi@redberry.ge'
+            defaultValue={data.data.email}
           />
         </form>
         <div className='flex flex-col gap-5 w-full'>

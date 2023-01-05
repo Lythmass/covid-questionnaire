@@ -3,6 +3,7 @@ const Num = (props) => {
     <>
       <input
         {...props.methods.register(props.name, props.validateNumber)}
+        defaultValue={props.defaultValue}
         name={props.name}
         type={props.type}
         id={props.name}

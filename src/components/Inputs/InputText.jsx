@@ -64,6 +64,7 @@ const InputText = (props) => {
           placeholder={props.placeholder}
           methods={methods}
           validateEmail={validateEmail}
+          defaultValue={props.defaultValue}
         />
       )}
       {props.type === 'text' && (
@@ -74,6 +75,7 @@ const InputText = (props) => {
           placeholder={props.placeholder}
           methods={methods}
           validateText={validateText}
+          defaultValue={props.defaultValue}
         />
       )}
       {props.type === 'num' && (
@@ -84,6 +86,7 @@ const InputText = (props) => {
           placeholder={props.placeholder}
           methods={methods}
           validateNumber={validateNumber}
+          defaultValue={props.defaultValue}
         />
       )}
       {props.type === 'temporary-text' && (
@@ -94,6 +97,7 @@ const InputText = (props) => {
           placeholder={props.placeholder}
           methods={methods}
           validateDate={validateDate}
+          defaultValue={props.defaultValue}
         />
       )}
     </div>

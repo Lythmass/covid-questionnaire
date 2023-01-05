@@ -3,6 +3,7 @@ const Mail = (props) => {
     <>
       <input
         {...props.methods.register(props.name, props.validateEmail)}
+        defaultValue={props.defaultValue}
         name={props.name}
         type={props.type}
         id={props.name}

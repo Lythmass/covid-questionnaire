@@ -5,7 +5,7 @@ import { useError } from '@/hooks';
 
 const ShowOnSecondNo = (props) => {
   const methods = useForm({ mode: 'all' });
-  const [watchDate, dateError] = useError('date', methods);
+  const [watchDate, dateError] = useError('date', methods, props.data);
 
   useEffect(() => {
     if (watchDate !== undefined && dateError === undefined) {
@@ -27,6 +27,7 @@ const ShowOnSecondNo = (props) => {
           type='temporary-text'
           displayName='მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*'
           placeholder='დდ/თთ/წწ'
+          defaultValue={props.data}
         />
       </form>
     </FormProvider>
