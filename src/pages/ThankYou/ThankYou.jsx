@@ -21,7 +21,7 @@ const ThankYou = () => {
   return (
     <section className='relative overflow-hidden animate-bg-color font-bpg bg-neutral-800 w-full h-screen flex justify-center items-center'>
       <img
-        className='animate-heart absolute w-full opacity-0'
+        className='animate-heart absolute w-full scale-[2] z-0'
         src='/assets/images/heart.png'
         alt='heart'
       />
@@ -30,7 +30,7 @@ const ThankYou = () => {
         src='/assets/images/star.png'
         alt='star'
       />
-      <h1 className='font-bold text-[4rem] text-white'>მადლობა</h1>
+      <h1 className='z-[9] font-bold text-[4rem] text-white'>მადლობა</h1>
       <img
         className='animate-thank-you-star-2 w-8 absolute right-[51.5rem] bottom-[25rem]'
         src='/assets/images/star.png'
