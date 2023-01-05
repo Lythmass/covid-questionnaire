@@ -21,7 +21,7 @@ const ThankYou = () => {
   return (
     <section className='relative overflow-hidden animate-bg-color font-bpg bg-neutral-800 w-full h-screen flex justify-center items-center'>
       <img
-        className='animate-heart absolute w-full scale-[2] z-0'
+        className='animate-heart absolute w-full scale-[2] z-0 left-[17rem] top-[-37.8rem]'
         src='/assets/images/heart.png'
         alt='heart'
       />
