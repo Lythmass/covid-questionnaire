@@ -65,6 +65,16 @@ Host on local server
         │   ├── PageExample.jsx
         │   └── index.js
         └── index.js
+        - .eslintrc.json
+- .prettierrc.json
+- index.html
+- jsconfig.json
+- package-lock.json
+- package.json
+- postcss.config.cjs
+- README.md
+- tailwind.config.cjs
+- vite.config.js
 ```
 
 
