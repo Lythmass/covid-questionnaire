@@ -7,22 +7,26 @@ import { useTitle } from '@/hooks';
 const PersonalInfo = () => {
   const [canProceed, setCanProceed] = useState(false);
   const data = useContext(SendDataContext);
-  const methods = useForm({ mode: 'all' });
+  const methods = useForm({
+    mode: 'all',
+    defaultValues: {
+      firstName: data.data.first_name,
+      lastName: data.data.last_name,
+      mail: data.data.email,
+    },
+  });
 
   const firstName = useWatch({
     name: 'firstName',
     control: methods.control,
-    defaultValue: data.data.first_name,
   });
   const lastName = useWatch({
     name: 'lastName',
     control: methods.control,
-    defaultValue: data.data.last_name,
   });
   const mail = useWatch({
     name: 'mail',
     control: methods.control,
-    defaultValue: data.data.email,
   });
   const firstNameError = methods.formState.errors['firstName']?.message;
   const lastNameError = methods.formState.errors['lastName']?.message;

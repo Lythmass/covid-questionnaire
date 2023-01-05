@@ -10,22 +10,26 @@ const CovidState = () => {
   useTitle('Covid State');
 
   const data = useContext(SendDataContext);
-  const methods = useForm({ mode: 'all' });
+  const methods = useForm({
+    mode: 'all',
+    defaultValues: {
+      overcame:
+        data.data.had_covid === 'have_right_now'
+          ? data.data.had_covid
+          : data.data.had_covid + '-1',
+      'done-test':
+        data.data.had_antibody_test !== undefined &&
+        (data.data.had_antibody_test ? 'yes-2' : 'no-2'),
+    },
+  });
 
   const watchHadCovid = useWatch({
     name: 'overcame',
     control: methods.control,
-    defaultValue:
-      data.data.had_covid === 'have_right_now'
-        ? data.data.had_covid
-        : data.data.had_covid + '-1',
   });
   const watchDoneTest = useWatch({
     name: 'done-test',
     control: methods.control,
-    defaultValue:
-      data.data.had_antibody_test !== undefined &&
-      (data.data.had_antibody_test ? 'yes-2' : 'no-2'),
   });
 
   useEffect(() => {

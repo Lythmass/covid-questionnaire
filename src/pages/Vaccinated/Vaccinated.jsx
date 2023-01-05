@@ -9,23 +9,27 @@ const Vaccinated = () => {
   const data = useContext(SendDataContext);
   const [canProceed, setCanProceed] = useState(false);
 
-  const methods = useForm({ mode: 'all' });
+  const methods = useForm({
+    mode: 'all',
+    defaultValues: {
+      vaccinated:
+        data.data.had_vaccine !== undefined &&
+        (data.data.had_vaccine ? 'yes-1' : 'no-1'),
+      step:
+        data.data.had_vaccine !== undefined &&
+        (data.data.had_vaccine
+          ? data.data.vaccination_stage
+          : data.data.i_am_waiting),
+    },
+  });
 
   const watchVaccinated = useWatch({
     name: 'vaccinated',
     control: methods.control,
-    defaultValue:
-      data.data.had_vaccine !== undefined &&
-      (data.data.had_vaccine ? 'yes-1' : 'no-1'),
   });
   const watchStep = useWatch({
     name: 'step',
     control: methods.control,
-    defaultValue:
-      data.data.had_vaccine !== undefined &&
-      (data.data.had_vaccine
-        ? data.data.vaccination_stage
-        : data.data.i_am_waiting),
   });
 
   useEffect(() => {

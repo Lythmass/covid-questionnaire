@@ -7,30 +7,33 @@ import { useNavigate } from 'react-router-dom';
 import { useTitle } from '@/hooks';
 
 const CovidPolicy = () => {
-  const methods = useForm();
+  const methods = useForm({
+    defaultValues: {
+      meetings: localStorage.getItem('non_formal_meetings'),
+      work: localStorage.getItem('number_of_days_from_office'),
+      'area-1': localStorage.getItem('what_about_meetings_in_live') || '',
+      'area-2': localStorage.getItem('tell_us_your_opinion_about_us') || '',
+    },
+  });
   const navigate = useNavigate();
   const data = useContext(SendDataContext);
 
   const watchMeetings = useWatch({
     name: 'meetings',
     control: methods.control,
-    defaultValue: localStorage.getItem('non_formal_meetings'),
   });
   const watchWork = useWatch({
     name: 'work',
     control: methods.control,
-    defaultValue: localStorage.getItem('number_of_days_from_office'),
   });
 
   const watchArea1 = useWatch({
     name: 'area-1',
     control: methods.control,
-    defaultValue: localStorage.getItem('what_about_meetings_in_live') || '',
   });
   const watchArea2 = useWatch({
     name: 'area-2',
     control: methods.control,
-    defaultValue: localStorage.getItem('tell_us_your_opinion_about_us') || '',
   });
 
   useTitle('Covid Policy');
