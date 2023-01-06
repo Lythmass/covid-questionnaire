@@ -58,7 +58,7 @@ const CovidPolicy = () => {
 
   return (
     <Layout image='bike2' page='4' nextPage='' prevPage='vaccinated'>
-      <div className='flex flex-col gap-11 w-[70%] overflow-auto h-[60vh] pr-5 pl-1'>
+      <div className='flex flex-col gap-11 w-[70%] overflow-auto scrollbar-hide h-[60vh] pr-5 pl-1'>
         <p className='text-[1.375rem]'>
           რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო,
           რომელსაც ჩვენი თანამშრომლები ქმნით, ბევრისთვის არის და ყოფილა წლების
