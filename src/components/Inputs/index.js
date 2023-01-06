@@ -1,4 +1,4 @@
-export { default as InputText } from './InputText';
-export { default as InputRadioValidation } from './InputRadioValidation';
-export { default as RadioBlock } from './RadioBlock';
+export { InputText } from './InputText';
+export { InputRadioValidation } from './Radios';
+export { RadioBlock } from './Radios';
 export { Mail, Text, Num, Date } from './InputTextComponents';
