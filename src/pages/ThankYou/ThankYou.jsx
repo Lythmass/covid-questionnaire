@@ -26,13 +26,15 @@ const ThankYou = () => {
         alt='heart'
       />
       <img
-        className='animate-thank-you-star-1 w-14 absolute left-[51rem] top-[23rem]'
+        className='animate-thank-you-star-1 w-14 absolute left-[48.2rem] top-[24rem]'
         src='/assets/images/star.png'
         alt='star'
       />
-      <h1 className='z-[9] font-bold text-[4rem] text-white'>მადლობა</h1>
+      <h1 className='z-[9] space font-bold text-[4rem] tracking-[0.24em] text-white'>
+        მადლობა
+      </h1>
       <img
-        className='animate-thank-you-star-2 w-8 absolute right-[51.5rem] bottom-[25rem]'
+        className='animate-thank-you-star-2 w-8 absolute right-[49rem] bottom-[27rem]'
         src='/assets/images/star.png'
         alt='star'
       />
