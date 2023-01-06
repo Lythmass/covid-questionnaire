@@ -73,7 +73,7 @@ const CovidPolicy = () => {
             className='flex flex-col gap-11 w-full'
           >
             <RadioBlock title='რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?*'>
-              <p className='text-orange-600'>
+              <p className='text-orange-600 h-4'>
                 {methods.formState.errors.meetings?.message}
               </p>
               <InputRadioValidation
@@ -102,7 +102,7 @@ const CovidPolicy = () => {
               />
             </RadioBlock>
             <RadioBlock title='კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*'>
-              <p className='text-orange-600'>
+              <p className='text-orange-600 h-4'>
                 {methods.formState.errors.work?.message}
               </p>
               <InputRadioValidation
