@@ -63,10 +63,10 @@ module.exports = {
           },
         },
         'thank-you-star-1': {
-          '0%': { transform: 'translateY(3rem) translateX(3rem)' },
+          '0%': { transform: 'translateY(4rem) translateX(4rem)' },
         },
         'thank-you-star-2': {
-          '0%': { transform: 'translateY(-3rem) translateX(-3rem)' },
+          '0%': { transform: 'translateY(-4rem) translateX(-4rem)' },
         },
         'page-fade': {
           '0%': { opacity: '0.1' },
